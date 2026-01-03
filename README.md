@@ -1,16 +1,40 @@
-# React + Vite
+# 🤫 CampusZen: JNU Quiet Finder
+> **A Real-Time Crowdsourced Map for Finding Study Spots on Campus.**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Status](https://img.shields.io/badge/Status-Prototype-green)
+![Tech Stack](https://img.shields.io/badge/Stack-React_|_Firebase_|_Leaflet-blue)
 
-Currently, two official plugins are available:
+## 📖 The Problem
+During exam weeks at **Jawaharlal Nehru University (JNU)**, the Central Library and Reading Halls are packed to capacity. Students waste 20-30 minutes wandering from the Ad Block to the hostels just looking for an empty chair or a quiet corner to study.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 The Solution
+**CampusZen** is a real-time, location-based web app that allows students to:
+1.  **Check Status:** View a live map of the campus showing "Quiet" (Green) vs "Crowded" (Red) zones.
+2.  **Report Spots:** Instantly drop a pin to alert others about available seats or noisy areas.
+3.  **Stay Updated:** Data is live-synced. If a spot gets crowded, the status updates instantly for everyone.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
+*   **📍 JNU-Locked Map:** Custom map bounds restricted specifically to the JNU campus (Munirka to Vasant Kunj borders).
+*   **⚡ Real-Time Sync:** Powered by **Firebase Firestore**. When one student adds a pin, it appears on everyone's screen in milliseconds (No refresh needed).
+*   **⏳ Auto-Expiry Logic:** To prevent outdated information, pins automatically vanish after **1 Hour**.
+    *   *(Note: For Demo purposes, this is currently set to 10 seconds)*.
+*   **🎨 Visual Cues:** 
+    *   🟢 **Green Pin:** Empty / Quiet Area.
+    *   🔴 **Red Pin:** Crowded / Noisy Area.
+    *   ⏳ **Countdown Timer:** Popups show exactly when a pin will expire.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+| Component | Technology |
+| :--- | :--- |
+| **Frontend** | React.js (Vite) |
+| **Mapping Engine** | React Leaflet + OpenStreetMap |
+| **Backend / DB** | Firebase Firestore (NoSQL) |
+| **Styling** | Tailwind CSS + Glassmorphism UI |
+| **Icons** | Leaflet Color Markers |
+
+---
+
