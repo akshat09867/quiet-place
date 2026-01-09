@@ -75,7 +75,7 @@ function App() {
     setFormName("");
   };
 
-  const TIME_LIMIT = 10 * 1000; 
+  const TIME_LIMIT = 3600 * 1000; 
 
   const activeSpots = spots.filter(spot => (now - spot.timestamp) < TIME_LIMIT);
 
@@ -106,7 +106,7 @@ function App() {
             <span className="text-sm font-medium">Crowded / Noisy</span>
           </div>
           <div className="mt-3 text-xs text-gray-400">
-            *Pins vanish in 10 seconds (Demo Mode)
+            *Pins vanish in 60 seconds
           </div>
         </div>
       </div>
@@ -124,8 +124,14 @@ function App() {
                 {spot.status.toUpperCase()}
               </div>
               <p className="text-xs text-gray-400 mt-2">
-                 Expires in: {Math.max(0, Math.round((TIME_LIMIT - (now - spot.timestamp))/1000))}s
+                Expires in:{" "}
+                {Math.max(
+                0,
+                Math.ceil((TIME_LIMIT - (now - spot.timestamp)) / (1000 * 60))
+                )}{" "}
+                min
               </p>
+
             </div>
           </Popup>
         </Marker>
